@@ -21,13 +21,13 @@ public class Produto {
 	private String descricao;
 	private int paginas;
 	
-	@DateTimeFormat
-	private Calendar dataLancamento;
+	private String sumarioPath;
 
 	@ElementCollection
 	private List<Preco> precos;
 	
-	private String sumarioPath;
+	@DateTimeFormat
+	private Calendar dataLancamento;
 	
 	public String getTitulo() {
 		return titulo;
@@ -67,18 +67,22 @@ public class Produto {
 	public Calendar getDataLancamento() {
 		return dataLancamento;
 	}
+	
 	public void setDataLancamento(Calendar dataLancamento) {
 		this.dataLancamento = dataLancamento;
 	}
-	@Override
-	public String toString() {
-		return "Produto [titulo=" + titulo + ", descricao=" + descricao + ", paginas=" + paginas + "]";
-	}
+	
 	public String getSumarioPath() {
 		return sumarioPath;
 	}
+	
 	public void setSumarioPath(String sumarioPath) {
 		this.sumarioPath = sumarioPath;
+	}
+	
+	@Override
+	public String toString() {
+		return "Produto [titulo=" + titulo + ", descricao=" + descricao + ", paginas=" + paginas + "]";
 	}
 
 }
